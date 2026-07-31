@@ -17,10 +17,10 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/updates"
-              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-700"
+              className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-10 py-5 text-lg font-semibold text-white transition hover:bg-slate-700"
             >
-              Browse updates
-              <ArrowRight className="h-4 w-4" />
+              Latest updates
+              <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
           <div className="grid gap-3 pt-2">
