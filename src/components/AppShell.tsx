@@ -17,9 +17,13 @@ export function AppShell({ children }: PropsWithChildren) {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="space-y-2">
               <Link to="/" className="inline-flex items-center gap-3">
-                <span className="h-8 w-1 rounded-full bg-slate-900" aria-hidden="true" />
+                <img
+                  src="./main%20logo.png"
+                  alt={campaignMeta.title}
+                  className="h-12 w-auto object-contain md:h-14"
+                />
                 <div>
-                  <p className="text-3xl font-semibold leading-none text-slate-900 md:text-4xl">
+                  <p className="text-2xl font-semibold leading-none text-slate-900 md:text-3xl">
                     {campaignMeta.title}
                   </p>
                   <p className="max-w-2xl text-xs uppercase tracking-[0.24em] text-slate-500">
@@ -57,8 +61,8 @@ export function AppShell({ children }: PropsWithChildren) {
         <footer className="border-t border-slate-200 py-5">
           <div className="grid gap-4 text-sm text-slate-500 md:grid-cols-[1.4fr_1fr]">
             <p>
-              A simple campaign site with a homepage and updates section, ready for real content to
-              be added.
+              Residents are organising to oppose HMO overdevelopment at The Wilton and to protect
+              the residential character of Wilton Road.
             </p>
             <p className="text-left md:text-right">
               Hosted at <span className="text-slate-800">www.wiltonroadhmo.com</span>

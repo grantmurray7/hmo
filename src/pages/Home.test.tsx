@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import Home from '@/pages/Home'
 
 describe('Home page', () => {
-  it('renders the simplified hero and empty updates section', () => {
+  it('renders the protest hero and campaign section', () => {
     render(
       <MemoryRouter>
         <Home />
@@ -15,13 +15,16 @@ describe('Home page', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /a simple public campaign site for wilton road/i,
+        name: /stop the hmo development at the wilton/i,
       }),
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { level: 2, name: /professional, simple, and ready for real content/i }),
+      screen.getByRole('heading', {
+        level: 2,
+        name: /wilton road is a private residential road, not a place for hmo overdevelopment/i,
+      }),
     ).toBeInTheDocument()
-    expect(screen.getAllByText(/blank image/i).length).toBeGreaterThan(0)
+    expect(screen.getByText(/opposing hmo overdevelopment on our private road/i)).toBeInTheDocument()
   })
 })

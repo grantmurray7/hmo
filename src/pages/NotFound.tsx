@@ -7,10 +7,10 @@ export default function NotFound() {
         Page not found
       </p>
       <h1 className="mt-4 text-5xl font-semibold leading-none text-slate-900">
-        That update could not be found.
+        That campaign page could not be found.
       </h1>
       <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
-        The link may be outdated, or the update may have been renamed as the archive develops.
+        The link may be outdated, or that update may not have been published yet.
       </p>
       <div className="mt-6">
         <Link

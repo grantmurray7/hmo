@@ -18,9 +18,10 @@ export default function Updates() {
           Back home
         </Link>
         <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">Updates</p>
-        <h1 className="text-4xl font-semibold text-slate-900 md:text-5xl">Updates will appear here.</h1>
+        <h1 className="text-4xl font-semibold text-slate-900 md:text-5xl">Campaign updates and objections.</h1>
         <p className="max-w-2xl text-base leading-8 text-slate-600">
-          No posts are published yet. This page is ready for future updates and images.
+          This page will carry resident updates, planning objections, evidence, and key developments
+          in the campaign against the proposed HMO at The Wilton.
         </p>
       </div>
 
@@ -41,8 +42,9 @@ export default function Updates() {
                 key={card.title}
                 className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm"
               >
-                <div className="mb-4 flex aspect-[16/10] items-center justify-center rounded-[18px] border border-dashed border-slate-300 bg-slate-50">
-                  <span className="text-sm text-slate-400">Blank image</span>
+                <div className="mb-4 rounded-[18px] bg-slate-50 p-6">
+                  <p className="text-sm font-medium text-slate-800">{card.title}</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">{card.summary}</p>
                 </div>
                 <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{card.date}</p>
                 <h2 className="mt-2 text-xl font-medium text-slate-900">{card.title}</h2>
