@@ -8,9 +8,6 @@ export default function Home() {
     <div className="space-y-12">
       <section className="grid items-center gap-10 border-b border-slate-200 pb-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-500">
-            Residents' protest campaign
-          </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] text-slate-900 md:text-7xl">
             Stop the HMO development at The Wilton.
           </h1>
@@ -40,7 +37,7 @@ export default function Home() {
 
         <div className="rounded-[28px] border border-slate-200 bg-slate-100 p-4">
           <img
-            src="./hero.png"
+            src="/hero.png"
             alt="Wilton Road campaign hero"
             className="aspect-[4/3] w-full rounded-[22px] object-cover"
           />

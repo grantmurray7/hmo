@@ -14,25 +14,14 @@ export function AppShell({ children }: PropsWithChildren) {
     <div className="min-h-screen bg-white text-slate-900">
       <div className="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-5 pb-10 pt-4 md:px-8">
         <header className="border-b border-slate-200 py-5">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div className="space-y-2">
-              <Link to="/" className="inline-flex items-center gap-3">
-                <img
-                  src="./main%20logo.png"
-                  alt={campaignMeta.title}
-                  className="h-12 w-auto object-contain md:h-14"
-                />
-                <div>
-                  <p className="text-2xl font-semibold leading-none text-slate-900 md:text-3xl">
-                    {campaignMeta.title}
-                  </p>
-                  <p className="max-w-2xl text-xs uppercase tracking-[0.24em] text-slate-500">
-                    {campaignMeta.location}
-                  </p>
-                </div>
-              </Link>
-              <p className="max-w-3xl text-sm leading-6 text-slate-600">{campaignMeta.strapline}</p>
-            </div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src="/main%20logo.png"
+                alt={campaignMeta.title}
+                className="h-14 w-auto object-contain md:h-16"
+              />
+            </Link>
 
             <nav className="flex flex-wrap items-center gap-3">
               {navItems.map((item) => (
