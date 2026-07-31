@@ -1,5 +1,5 @@
 export const campaignMeta = {
-  title: 'Stop The Wilton HMO',
+  title: 'NO H.M.O. on Wilton Road',
   strapline:
     'Residents opposing the overdevelopment of Number 27 Wilton Road, Redhill, RH1 6QR.',
   location: 'Wilton Road, Redhill, RH1 6QR',
