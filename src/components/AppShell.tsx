@@ -13,7 +13,7 @@ export function AppShell({ children }: PropsWithChildren) {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <div className="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-5 pb-10 pt-4 md:px-8">
-        <header className="border-b border-slate-200 py-5">
+        <header className="py-5">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
             <Link to="/" className="inline-flex items-center">
               <img
