@@ -19,7 +19,7 @@ export function AppShell({ children }: PropsWithChildren) {
               <img
                 src="/main%20logo.png"
                 alt={campaignMeta.title}
-                className="h-14 w-auto object-contain md:h-16"
+                className="h-20 w-auto object-contain md:h-24"
               />
             </Link>
 

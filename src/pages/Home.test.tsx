@@ -15,7 +15,7 @@ describe('Home page', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /stop the hmo development at the wilton/i,
+        name: /stop the hmo development on wilton road, redhill/i,
       }),
     ).toBeInTheDocument()
 

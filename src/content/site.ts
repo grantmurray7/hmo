@@ -7,7 +7,7 @@ export const campaignMeta = {
   issue:
     'This campaign challenges plans and works that residents believe threaten the character, safety, and quiet residential nature of our private road.',
   mission:
-    'We are organising opposition, publishing updates, and building a clear public record of residents’ concerns about the proposed HMO development at The Wilton.',
+    'Wilton Road residents are united in their opposition to the apparent development of an unapproved HMO at 27 Wilton Road. We are campaigning to have this development stopped and investigated.',
 } as const
 
 export const heroPoints = [

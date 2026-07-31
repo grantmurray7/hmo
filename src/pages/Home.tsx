@@ -6,12 +6,12 @@ import { campaignMeta, emptyUpdateCards, heroPoints } from '@/content/site'
 export default function Home() {
   return (
     <div className="space-y-12">
-      <section className="grid items-center gap-10 border-b border-slate-200 pb-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="space-y-6">
+      <section className="grid items-start gap-12 border-b border-slate-200 pb-12 lg:grid-cols-[1fr_1fr]">
+        <div className="space-y-7 pt-4">
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.02] text-slate-900 md:text-7xl">
-            Stop the HMO development at The Wilton.
+            Stop the HMO development on Wilton Road, Redhill.
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="max-w-2xl text-lg font-semibold leading-8 text-slate-800">
             {campaignMeta.mission}
           </p>
           <div className="flex flex-wrap gap-3">
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="rounded-[28px] border border-slate-200 bg-slate-100 p-4">
+        <div className="rounded-[28px] border border-slate-200 bg-slate-100 p-4 lg:mt-2">
           <img
             src="/hero.png"
             alt="Wilton Road campaign hero"
