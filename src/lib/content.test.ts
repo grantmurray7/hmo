@@ -9,33 +9,38 @@ import {
 } from '@/lib/content'
 
 describe('content loader', () => {
-  it('loads posts in reverse chronological order', () => {
+  it('starts with no posts', () => {
     const posts = getAllPosts()
 
-    expect(posts).toHaveLength(3)
-    expect(posts[0].slug).toBe('campaign-record-launch')
-    expect(posts[1].slug).toBe('planning-position-summary')
-    expect(posts[2].slug).toBe('resident-observations-log')
+    expect(posts).toHaveLength(0)
   })
 
-  it('returns featured posts only', () => {
+  it('returns no featured posts', () => {
     const featuredPosts = getFeaturedPosts()
 
-    expect(featuredPosts).toHaveLength(2)
-    expect(featuredPosts.every((post) => post.featured)).toBe(true)
+    expect(featuredPosts).toHaveLength(0)
   })
 
-  it('collects topic tags', () => {
+  it('returns no available tags', () => {
     const tags = getAvailableTags()
 
-    expect(tags).toContain('planning')
-    expect(tags).toContain('timeline')
+    expect(tags).toHaveLength(0)
   })
 
-  it('resolves a post and its related updates', () => {
-    const post = getPostBySlug('campaign-record-launch')
+  it('returns no post and no related posts', () => {
+    const post = getPostBySlug('missing-post')
 
-    expect(post).not.toBeNull()
-    expect(getRelatedPosts(post!)).toHaveLength(2)
+    expect(post).toBeNull()
+    expect(getRelatedPosts({
+      slug: 'missing-post',
+      title: 'Missing post',
+      date: '2026-07-31',
+      summary: 'Summary',
+      tags: [],
+      featured: false,
+      status: 'process',
+      relatedSlugs: ['another-missing-post'],
+      body: '',
+    })).toHaveLength(0)
   })
 })

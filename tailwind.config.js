@@ -8,17 +8,12 @@ export default {
       center: true,
     },
     extend: {
-      colors: {
-        ink: "#0d0d0d",
-        paper: "#f3efe7",
-        ember: "#a63b32",
-      },
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'serif'],
-        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        display: ['"Google Sans"', '"Google Sans Text"', 'Arial', 'sans-serif'],
+        sans: ['"Google Sans"', '"Google Sans Text"', 'Arial', 'sans-serif'],
       },
       boxShadow: {
-        panel: '0 24px 80px rgba(0, 0, 0, 0.28)',
+        panel: '0 10px 30px rgba(15, 23, 42, 0.08)',
       },
     },
   },
