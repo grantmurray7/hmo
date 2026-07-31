@@ -1,5 +1,3 @@
-import matter from 'gray-matter'
-
 export type PostStatus = 'confirmed' | 'concern' | 'process'
 
 export type CampaignPost = {
@@ -57,8 +55,73 @@ function normalizeStatus(value: unknown): PostStatus {
   return 'process'
 }
 
+function parseScalar(value: string): unknown {
+  const trimmed = value.trim()
+
+  if (trimmed === 'true') return true
+  if (trimmed === 'false') return false
+
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1)
+  }
+
+  if (trimmed.startsWith('[') && trimmed.endsWith(']')) {
+    const inner = trimmed.slice(1, -1).trim()
+
+    if (!inner) {
+      return []
+    }
+
+    return inner
+      .split(',')
+      .map((item) => parseScalar(item) as string)
+      .filter(Boolean)
+  }
+
+  return trimmed
+}
+
+function parseFrontmatter(raw: string) {
+  if (!raw.startsWith('---')) {
+    return { data: {}, content: raw }
+  }
+
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
+
+  if (!match) {
+    return { data: {}, content: raw }
+  }
+
+  const [, frontmatterBlock, content] = match
+  const data: Record<string, unknown> = {}
+
+  for (const line of frontmatterBlock.split(/\r?\n/)) {
+    const trimmed = line.trim()
+
+    if (!trimmed) {
+      continue
+    }
+
+    const separatorIndex = trimmed.indexOf(':')
+
+    if (separatorIndex === -1) {
+      continue
+    }
+
+    const key = trimmed.slice(0, separatorIndex).trim()
+    const value = trimmed.slice(separatorIndex + 1).trim()
+
+    data[key] = parseScalar(value)
+  }
+
+  return { data, content }
+}
+
 function parsePost(path: string, raw: string): CampaignPost {
-  const parsed = matter(raw)
+  const parsed = parseFrontmatter(raw)
   const data = parsed.data as PostFrontmatter
 
   return {
